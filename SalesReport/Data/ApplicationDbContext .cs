@@ -12,6 +12,7 @@ namespace SalesReport.Data
 
         }
         public DbSet<SalesLead> SalesLeads { get; set; }
-        
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
     }
 }

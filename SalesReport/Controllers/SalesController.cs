@@ -8,15 +8,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SalesReport.Data;
 using SalesReport.Models;
-
 namespace SalesReport.Controllers
 {
     [Authorize]
-    public class LeadController : Controller
+    public class SalesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public LeadController(ApplicationDbContext context)
+        public SalesController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -24,7 +23,7 @@ namespace SalesReport.Controllers
         // GET: Lead
         public async Task<IActionResult> Index()
         {
-              return View(await _context.SalesLeads.ToListAsync());
+            return View(await _context.SalesLeads.ToListAsync());
         }
 
         // GET: Lead/Details/5
@@ -150,14 +149,14 @@ namespace SalesReport.Controllers
             {
                 _context.SalesLeads.Remove(salesLead);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool SalesLeadExists(int id)
         {
-          return _context.SalesLeads.Any(e => e.Id == id);
+            return _context.SalesLeads.Any(e => e.Id == id);
         }
     }
 }

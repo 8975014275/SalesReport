@@ -12,8 +12,8 @@ using SalesReport.Data;
 namespace SalesReport.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221231102345_IdentityTables")]
-    partial class IdentityTables
+    [Migration("20241025190605_IntialDb")]
+    partial class IntialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
